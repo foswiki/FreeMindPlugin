@@ -1,0 +1,264 @@
+head	1.3;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.3
+date	2010.01.21.23.36.27;	author JohnPoplett;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.12.02.20.11.00;	author JohnPoplett;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.12.01.23.33.05;	author JohnPoplett;	state Exp;
+branches;
+next	;
+
+
+desc
+@none
+@
+
+
+1.3
+log
+@none
+@
+text
+@%META:TOPICINFO{author="JohnPoplett" date="1264116987" format="1.1" reprev="1.3" version="1.3"}%
+%META:TOPICPARENT{name="WebHome"}%
+---+!! %TOPIC%
+
+The %TOPIC% implements the *%<nop>FREEMIND%* tag to render [[http://freemind.sourceforge.net][Free<nop>Mind]] mindmaps in a Foswiki topic. It requires Adobe's flash player plugin to run from the browser. Free<nop>Mind is open-source, "free" graphical mind-mapping software written in Java.
+
+%TOC%
+---++ Syntax
+
+<verbatim>
+%FREEMIND{ mindMap="pathToMindMap.mm" <optional attributes>}
+</verbatim>
+
+| *Attribute* | *Description* | *Required* |
+| mindMap | specify the mindmap  (.mm file) to display | Yes |
+| width | specify the display area width in pixels or percentage | No |
+| height | specify the display area height in pixels or percentage | No |
+
+---++ Example
+
+<verbatim>
+%FREEMIND{ mindMap="%ATTACHURL%/Wiki.mm" width="200" height="200"}}%
+</verbatim>
+
+%I% This example uses %<nop>ATTACHURL% to locate a mindmap file attached to the same page.
+
+If this plugin is installed, you will see the sample mindmap displayed via flash player.
+
+%FREEMIND{ mindMap="%ATTACHURL%/Wiki.mm" width="200" height="200"}%
+
+---++ Settings
+
+%TOPIC% settings are stored as preferences variables. To reference a plugin setting, write %<nop>%TOPIC%_&lt;setting&gt;%, e.g. %<nop>%TOPIC%_SHORTDESCRIPTION%
+
+   * One line description, is shown in the %SYSTEMWEB%.TextFormattingRules topic: 
+      * Set FREEMIND_SHORTDESCRIPTION = _one line description here_
+   * Debug plugin: (See output in data/debug.txt)
+      * Set FREEMIND_DEBUG = 0
+
+---++ Installation
+
+Note: You do not need to install anything on the browser to use this plugin. The following instructions are for the administrator who installs the plugin on the Foswiki server.
+
+   * Download the ZIP file from the Plugin Home (see below) 
+   * Unzip %TOPIC%.zip in your Foswiki installation directory. Content:
+
+| *File:* | *Description:* |
+| data/System/%TOPIC%.txt | Plugin topic |
+| data/System/%TOPIC%.txt,v | Plugin topic repository |
+| lib/Foswiki/Plugins/%TOPIC%.pm | Plugin Perl module |
+| pub/System/FreeMindPlugin/swfobject.js | SWFobject, a flash player loader |
+| pub/System/FreeMindPlugin/expressInstall.swf | Adobe flash player installer |
+| pub/System/FreeMindPlugin/Wiki.mm | sample Free<nop>Mind mindmap |
+| pub/System/FreeMindPlugin/visorFreemind.swf | Flash application to render mindmaps |
+
+   * Configure the Plugin: 
+      * Foswiki 1.09 and up: run the [[%SCRIPTURL%/configure%SCRIPTSUFFIX%][configure]] script to enable the Plugin
+      * Change the Plugin settings as needed 
+   * If successful, the example mindmap on your local copy of topic %TOPIC%, will render in your browser.
+
+---++ Plugin Info
+
+|  Author: | John Poplett |
+|  Copyright: | &copy; 2007-2010, John Poplett |
+|  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
+|  Version: | 5770 (2009-12-11) |
+|  Release: | 1.0 | 
+|  Change History: | <!-- versions below in reverse order --> | 
+|  21 Jan 2010: | Foswiki conversion |
+|  01 Dec 2008: | Initial version |
+|  CPAN Dependencies: | none |
+|  Other Dependencies: | Java<nop>Script&trade; and Flash support in browser |
+|  Home: | http://foswiki.org/Extensions/%TOPIC%Dev |
+|  Support: | http://foswiki.org/Support/%TOPIC% |
+
+
+Related Topics: %SYSTEMWEB%.Plugins, %SYSTEMWEB%.DeveloperDocumentationCategory, %SYSTEMWEB%.AdminDocumentationCategory, %SYSTEMWEB%.PreferencesPlugin
+
+%META:FILEATTACHMENT{name="Wiki.mm" attachment="Wiki.mm" attr="" comment="" date="1228245190" path="Wiki.mm" size="2144" stream="Wiki.mm" tmpFilename="/var/tmp/CGItemp13681" user="JohnPoplett" version="1"}%
+@
+
+
+1.2
+log
+@none
+@
+text
+@d1 1
+a1 1
+%META:TOPICINFO{author="JohnPoplett" date="1228248660" format="1.1" reprev="1.2" version="1.2"}%
+d5 1
+a5 1
+The %TOPIC% implements the *%<nop>FREEMIND%* tag to render [[http://freemind.sourceforge.net][Free<nop>Mind]] mindmaps from a Twiki topic. It requires Adobe's flash player plugin to run from the browser. Free<nop>Mind is open-source, "free" graphical mind-mapping software written in Java.
+d35 2
+a36 2
+   * One line description, is shown in the %TWIKIWEB%.TextFormattingRules topic: 
+      * Set %TOPIC%_SHORTDESCRIPTION = _one line description here_
+d38 1
+a38 1
+      *Set %TOPIC%_DEBUG = 0
+d42 1
+a42 1
+Note: You do not need to install anything on the browser to use this plugin. The following instructions are for the administrator who installs the plugin on the TWiki server.
+d45 10
+a54 9
+   * Unzip %TOPIC%.zip in your twiki installation directory. Content:
+   | File: | Description: |
+| data/TWiki/%TOPIC%.txt | Plugin topic |
+| data/TWiki/%TOPIC%.txt,v | Plugin topic repository |
+| lib/TWiki/Plugins/%TOPIC%.pm | Plugin Perl module |
+| pub/TWiki/FreeMindPlugin/swfobject.js | SWFobject, a flash player loader |
+| pub/TWiki/FreeMindPlugin/expressInstall.swf | Adobe flash player installer |
+| pub/TWiki/FreeMindPlugin/Wiki.mm | sample Free<nop>Mind mindmap |
+| pub/TWiki/FreeMindPlugin/visorFreemind.swf | Flash application to render mindmaps |
+d57 1
+a57 1
+      * TWiki 4.0 and up: run the [[%SCRIPTURL%/configure%SCRIPTSUFFIX%][configure]] script to enable the Plugin
+d63 12
+a74 14
+| Plugin Author: | TWiki:Main.JohnPoplett |
+| Copyright: | © 2007, TWiki:Main.JohnPoplett |
+| License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
+| Plugin Version: | 01 Dec 2008 (V1.000) |
+| Change History: | <!-- versions below in reverse order --> | 
+| 01 Dec 2008: | Initial version |
+| TWiki Dependency: | $TWiki::Plugins::VERSION 1.1 |
+| CPAN Dependencies: | none |
+| Other Dependencies: | Java<nop>Script&trade; and Flash support in browser |
+|  Perl Version: | 5.005 |
+| [[TWiki:Plugins/Benchmark][Benchmarks]]: | %TWIKIWEB%.GoodStyle nn%, %TWIKIWEB%.FormattedSearch nn%, %TOPIC% nn% |
+| Plugin Home: | http://TWiki.org/cgi-bin/view/Plugins/%TOPIC% |
+| Feedback: | http://TWiki.org/cgi-bin/view/Plugins/%TOPIC% |
+| Dev Appraisal: | http://TWiki.org/cgi-bin/view/Plugins/%TOPIC%Appraisal |
+a75 1
+Related Topics: %TWIKIWEB%.TWikiPlugins, %TWIKIWEB%.DeveloperDocumentationCategory, %TWIKIWEB%.AdminDocumentationCategory, %TWIKIWEB%.TWikiPreferences
+d77 1
+a77 1
+%TOPICCREATE{ template="Plugins.PluginDevTemplate" topic="FreeMindPluginDev" disable="NewPluginTemplate" parameters="pluginName=FreeMindPlugin&RelatedTopics=FreeMindPlugin, FreeMindPluginAppraisal" }% %TOPICCREATE{ template="Plugins.PluginAppraisalTemplate" topic="FreeMindPluginAppraisal" disable="NewPluginTemplate" parameters="RelatedTopics=FreeMindPlugin, FreeMindPluginDev" }% -- TWiki:Main.JohnPoplett - 01 Dec 2008
+@
+
+
+1.1
+log
+@none
+@
+text
+@d1 1
+a1 1
+%META:TOPICINFO{author="JohnPoplett" date="1228174385" format="1.1" reprev="1.1" version="1.1"}%
+d3 1
+a3 1
+ <nop>%TOPIC%
+d5 1
+a5 1
+short description here
+d7 2
+d10 3
+a12 1
+%TOC%
+d14 4
+a17 1
+Syntax Rules
+d19 1
+a19 2
+    *
+    *
+d21 3
+a23 1
+Examples
+d25 1
+a25 2
+    *
+    *
+d27 1
+a27 1
+Plugin Settings
+d29 1
+a29 1
+Plugin settings are stored as preferences variables. To reference a plugin setting write %<nop><plugin>_<setting>%, i.e. %<nop>NEWPLUGIN_SHORTDESCRIPTION%
+d31 1
+a31 2
+    * One line description, is shown in the %TWIKIWEB%.TextFormattingRules topic:
+          o Set SHORTDESCRIPTION = _one line description here_
+d33 1
+a33 2
+    * Debug plugin: (See output in data/debug.txt)
+          o Set DEBUG = 0
+d35 4
+a38 2
+    * My own setting:
+          o Set HOWTO = got it!
+d40 1
+a40 1
+Plugin Installation Instructions
+d44 32
+a75 30
+    * Download the ZIP file from the Plugin Home (see below)
+    * Unzip %TOPIC%.zip in your twiki installation directory. Content:
+
+File:	Description:
+==data/TWiki/%TOPIC%.txt==	Plugin topic
+==data/TWiki/%TOPIC%.txt,v==	Plugin topic repository
+==lib/TWiki/Plugins/%TOPIC%.pm==	Plugin Perl module
+
+    * Configure the Plugin:
+          o TWiki 4.0 and up: Run the [[%SCRIPTURL%/configure%SCRIPTSUFFIX%][configure]] script to enable the Plugin
+          o Change the Plugin settings as needed
+    * Test if the installation was successful:
+          o enter samples here
+
+Plugin Info
+
+Plugin Author:	TWiki:Main.JohnPoplett
+Copyright:	© 2007, TWiki:Main.JohnPoplett
+License:	GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]])
+Plugin Version:	01 Dec 2008 (V1.000)
+Change History:	<!-- versions below in reverse order --> 
+01 Dec 2008:	Initial version
+TWiki Dependency:	$TWiki::Plugins::VERSION 1.1
+CPAN Dependencies:	none
+Other Dependencies:	none
+Perl Version:	5.005
+[[TWiki:Plugins/Benchmark][Benchmarks]]:	%TWIKIWEB%.GoodStyle nn%, %TWIKIWEB%.FormattedSearch nn%, %TOPIC% nn%
+Plugin Home:	http://TWiki.org/cgi-bin/view/Plugins/%TOPIC%
+Feedback:	http://TWiki.org/cgi-bin/view/Plugins/%TOPIC%Dev
+Appraisal:	http://TWiki.org/cgi-bin/view/Plugins/%TOPIC%Appraisal
+d79 1
+d81 1
+a81 1
+%TOPICCREATE{ template="Plugins.PluginDevTemplate" topic="FreeMindPluginDev" disable="NewPluginTemplate" parameters="pluginName=FreeMindPlugin&RelatedTopics=FreeMindPlugin, FreeMindPluginAppraisal" }% %TOPICCREATE{ template="Plugins.PluginAppraisalTemplate" topic="FreeMindPluginAppraisal" disable="NewPluginTemplate" parameters="RelatedTopics=FreeMindPlugin, FreeMindPluginDev" }% -- TWiki:Main.JohnPoplett - 01 Dec 2008 
+@

@@ -16,7 +16,7 @@ require Foswiki::Plugins;
 use vars qw( $VERSION $RELEASE $SHORTDESCRIPTION $debug $pluginName);
 
 our $VERSION = '$Rev: 15942 (11 Aug 2008) $';
-our $RELEASE = '1.0';
+our $RELEASE = '1.1';
 our $SHORTDESCRIPTION = 'Plugin to render FreeMind mindmaps';
 
 $pluginName = 'FreeMindPlugin';
